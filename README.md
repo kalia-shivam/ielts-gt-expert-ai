@@ -1,50 +1,50 @@
-## 🌍 One-Day Travel Itinerary + AI-Generated Images (via GPT + DALL·E 3)
+## 🧠 AI Question Answering with OpenAI Assistant API (Google Cloud Run)
 
-This serverless Python API generates a **personalized one-day itinerary** for any city you provide, and then uses **DALL·E 3** to create beautiful images representing the morning, afternoon, and evening activities.
+This project is a **serverless Flask-based API** deployed on **Google Cloud Run** that uses the **OpenAI Assistant API** to process and respond to user-submitted questions using a custom GPT-4 assistant.
 
 ---
 
 ### 🔧 Features
 
-* 🧭 Generates **3-part itineraries** (Morning, Afternoon, Evening) with GPT-4
-* 🎨 Creates 3 **AI-generated images** (DALL·E 3) based on the itinerary
-* ☁️ Deployed on **Google Cloud Run**
-* 📦 Simple API endpoint: Send a city name and get back text + 3 images
-* 🛫 Great for use in travel planning apps or tourism content generators
+* 🧠 Uses OpenAI **Assistants API** (GPT-4-based)
+* 🌐 Accepts a user question via POST and returns a detailed AI-generated answer
+* ☁️ Fully deployed on **Google Cloud Run**
+* 📦 Minimal dependencies and clean structure
+* 🔐 Secure via environment variable for API key
 
 ---
 
 ### 🧪 Sample Request
 
-**POST** `/`
+```json
+POST /
+{
+  "question": "Give me tips to complete the IELTS reading section in 60 minutes using Test 2"
+}
+```
 
-**Body (JSON):**
+### ✅ Sample Response
 
 ```json
 {
-  "city": "Toronto, Canada"
+  "answer": "To complete the reading section of the IELTS General Training Test within 60 minutes..."
 }
 ```
 
 ---
 
-### 📦 Response
+### 📁 Project Structure
 
-```json
-{
-  "itinerary": "Morning: Visit the Royal Ontario Museum... Afternoon: Distillery District... Evening: CN Tower...",
-  "morning_image": "https://image-link.com/...",
-  "afternoon_image": "https://image-link.com/...",
-  "evening_image": "https://image-link.com/..."
-}
-```
+* `main.py` – API logic and assistant call
+* `requirements.txt` – Python dependencies
+* `Dockerfile` or GCP cloudbuild (optional for deployment)
 
 ---
 
-### 🗂️ Tech Stack
+### ⚙️ Tech Stack
 
 * Python 3.12
-* OpenAI GPT-4 + DALL·E 3
-* Google Cloud Run
 * Flask (via Functions Framework)
-* Postman for testing
+* OpenAI Assistants API (GPT-4)
+* Google Cloud Run
+* Postman (for testing)

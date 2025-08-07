@@ -17,7 +17,7 @@ def get_answer(request):
     question = request_json['question']
 
     # initialize openai
-    client = OpenAI(api_key==os.environ.get("OPENAI_API_KEY"))
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
     # create a thread
     thread = client.beta.threads.create()
