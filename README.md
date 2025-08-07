@@ -37,7 +37,6 @@ POST /
 
 * `main.py` – API logic and assistant call
 * `requirements.txt` – Python dependencies
-* `Dockerfile` or GCP cloudbuild (optional for deployment)
 
 ---
 
