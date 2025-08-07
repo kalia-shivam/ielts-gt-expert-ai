@@ -1,7 +1,11 @@
 import functions_framework
+from dotenv import load_dotenv
 import os
 import time
 from openai import OpenAI
+
+# Load env vars locally (ignored on Google Cloud)
+load_dotenv()
 
 @functions_framework.http
 def get_answer(request):
